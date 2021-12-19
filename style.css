@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  --txt-size: 54px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  font-family: "Playfair Display", serif;
+}
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 150px auto;
+}
+.container-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container-head h1 {
+  font-family: sans-serif;
+  font-size: 35px;
+}
+
+/* Style Slider */
+.slider-container {
+  display: flex;
+  align-items: center;
+}
+.nb-pixels {
+  margin-right: 50px;
+  font-weight: bold;
+  color: #333;
+  font-family: sans-serif;
+}
+input[type="range"] {
+  width: 100%;
+  min-width: 350px;
+  height: 3px;
+  background: rgb(36,115,232);
+  -webkit-appearance: none;
+  outline: none;
+  background: linear-gradient(90deg, rgba(36,115,232,1) 50%, rgba(199,221,249,1) 50%);
+}
+
+/* Chrome & Safari */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  background: #2473e8;
+  border-radius: 100%;
+  cursor: grab;
+}
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  background: #2473e8;
+  border-radius: 100%;
+  cursor: grab;
+}
+
+.main {
+  margin-top: 100px;
+}
+.row {
+  position: relative;
+  padding: 40px 0;
+  border-top: 1px solid #dadce0;
+  border-bottom: 1px solid #dadce0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.row:nth-child(even) {
+  border: 0;
+}
+.row::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 10%;
+  background: rgb(241,241,241);
+  background: linear-gradient(90deg, rgba(241,241,241,0.42) 0%, rgba(241,241,241,1) 62%);
+}
+.row p {
+  font-size: var(--txt-size);
+}
+@media screen and (max-width: 780px) {
+  .container-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .container-head h1 {margin-bottom: 40px;}
+}
